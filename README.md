@@ -6,7 +6,7 @@ A job-board web app that connects **job seekers** and **companies**. Job seekers
 
 | | |
 |---|---|
-| **Live demo** | [doroop-frontend-git-main-samerthaljis-projects.vercel.app] – click **Try the demo**, no sign-up needed |
+| **Live demo** | [doroop-frontend.vercel.app](https://doroop-frontend.vercel.app) – click **Try the demo**, no sign-up needed |
 | **My role** | Frontend: UI, routing, auth flow, API integration, state management |
 
 <!-- Add 3–4 screenshots or a short GIF here, e.g. ![Home](docs/screenshots/home.png) -->
