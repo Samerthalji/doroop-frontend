@@ -6,8 +6,7 @@ A job-board web app that connects **job seekers** and **companies**. Job seekers
 
 | | |
 |---|---|
-| **Live demo** | [ADD VERCEL LINK] – click **Try the demo**, no sign-up needed |
-| **Backend (.NET API)** | [ADD BACKEND REPO LINK] – built by [TEAMMATE NAME] |
+| **Live demo** | [doroop-frontend-git-main-samerthaljis-projects.vercel.app] – click **Try the demo**, no sign-up needed |
 | **My role** | Frontend: UI, routing, auth flow, API integration, state management |
 
 <!-- Add 3–4 screenshots or a short GIF here, e.g. ![Home](docs/screenshots/home.png) -->
@@ -90,4 +89,10 @@ src/
 - The **Company Settings** page is a UI prototype with mock data; it is hidden from the navigation until it is connected to the API.
 - Auth tokens live in `localStorage`; `httpOnly` cookies would be more resistant to XSS.
 - No automated tests yet.
-- The app depends on the hosted backend; if the API is down, data will not load.
+- Outside demo mode, the app depends on the hosted backend; if the API is down, use the demo mode.
+  ## Challenges & what I learned
+
+- **Token refresh with parallel requests.** When the access token expires, several requests can fail with 401 at once. I implemented a single shared refresh promise in an Axios interceptor so only one refresh call is sent and every failed request is replayed with the new token.
+- **CORS without touching the backend.** I proxy `/api/*` through Vercel rewrites (and CRA's `proxy` in development), so the browser stays same-origin and no server change was needed.
+- **Working without a reliable backend.** I built a mock Axios adapter with seeded data that mirrors the real API's response shapes, so the app can be demoed even when the API is offline.
+- **Cleaning up an existing codebase.** I unified the API layer, removed debug logs that leaked tokens, fixed a logout that left the refresh token behind, and replaced `alert()` calls with toasts.
