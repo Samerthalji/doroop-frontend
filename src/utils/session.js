@@ -1,5 +1,5 @@
 // Everything the app stores in localStorage that belongs to the signed-in user.
-const SESSION_KEYS = ['token', 'refresh', 'savedJobs'];
+const SESSION_KEYS = ['token', 'refresh', 'savedJobs', 'demo', 'demoDb'];
 
 export const clearSession = () => {
   try {

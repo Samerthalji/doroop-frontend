@@ -85,7 +85,7 @@ export default function MyApplicationsPage() {
             {loading ? (
               <div className="text-center py-20 bg-white rounded-[3rem] border border-slate-100 shadow-sm">
                 <div className="w-12 h-12 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-slate-400 font-black italic uppercase text-[10px] tracking-widest">Doroob System Syncing...</p>
+                <p className="text-slate-400 font-black italic uppercase text-[10px] tracking-widest">Doroop System Syncing...</p>
               </div>
             ) : error ? (
               <div className="bg-rose-50 text-rose-600 p-8 rounded-[2.5rem] border border-rose-100 text-center font-bold">

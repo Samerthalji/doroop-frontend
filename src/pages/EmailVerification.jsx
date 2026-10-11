@@ -74,7 +74,7 @@ export default function EmailVerification() {
           >
             {/* Logo / Title Section */}
             <div className="mb-8">
- <img src="/5.png" className='p-[30px]' alt="Doroob Logo" />
+ <img src="/5.png" className='p-[30px]' alt="Doroop Logo" />
                <h2 className="text-[20px] font-bold text-[#1c1e21] mb-2">أدخل رمز التأكيد</h2>
               <p className="text-[15px] text-[#606770] leading-6">
                 يرجى إدخال الرمز المكون من 6 أرقام الذي أرسلناه إلى: <br/>

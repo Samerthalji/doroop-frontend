@@ -1,3 +1,4 @@
+import { enterDemo } from '../demo/demoMode';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -54,6 +55,13 @@ export default function LandingPage() {
                     Get started
                   </button>
                 </Link>
+                <button
+                  type="button"
+                  onClick={enterDemo}
+                  className="flex items-center gap-2 border border-blue-800 text-blue-800 hover:bg-blue-50 active:scale-95 rounded-lg px-8 h-11"
+                >
+                  Try the demo
+                </button>
               </div>
             </main>
             <div className="hidden md:block">

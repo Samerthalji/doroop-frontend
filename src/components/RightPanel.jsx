@@ -239,7 +239,7 @@ const ApplicationsPanel = () => {
           <p className="text-[9px] font-black text-white/40 uppercase tracking-widest mb-1 relative z-10">Total Applied</p>
           <div className="text-5xl font-black text-white relative z-10">{stats.total}</div>
           <p className="text-[9px] font-bold text-white/30 uppercase tracking-widest mt-2 relative z-10">
-            Applications tracked by Doroob AI
+            Applications tracked by Doroop AI
           </p>
         </div>
       )}

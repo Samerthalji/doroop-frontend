@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { clearSession } from '../utils/session';
+import { isDemoMode } from '../demo/demoMode';
 
 /**
  * Every request uses a relative "/api" path so it is same-origin:
@@ -24,8 +25,13 @@ const apiClient = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
-// 1. Attach the access token to every authenticated request.
+// 1. Demo mode: answer from local sample data (loaded lazily, so it adds nothing to
+//    the main bundle). Otherwise attach the access token to authenticated requests.
 apiClient.interceptors.request.use((config) => {
+  if (isDemoMode()) {
+    config.adapter = (cfg) => import('../demo/demoAdapter').then((m) => m.demoAdapter(cfg));
+    return config;
+  }
   const token = localStorage.getItem('token');
   if (token && !isAuthEndpoint(config.url)) {
     config.headers.Authorization = `Bearer ${token}`;

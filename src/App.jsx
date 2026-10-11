@@ -23,11 +23,13 @@ import MyJobs from './pages/MyJobs';
 import ApplicantsPage from './pages/ApplicantsPage';
 import CompanySettings from './pages/CompanySetting';
 import Toaster from './components/Toaster';
+import DemoBanner from './components/DemoBanner';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Toaster />
+      <DemoBanner />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />

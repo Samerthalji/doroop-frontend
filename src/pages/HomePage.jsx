@@ -109,7 +109,7 @@ export default function HomePage() {
 
   const needsUpload = !user?.targetTitle || user?.targetTitle === "Not Set" || user?.targetTitle === "";
 
-  if (isLoadingData) return <div className="h-screen flex items-center justify-center font-black italic text-slate-300 animate-pulse">DOROOB SYSTEM...</div>;
+  if (isLoadingData) return <div className="h-screen flex items-center justify-center font-black italic text-slate-300 animate-pulse">DOROOP SYSTEM...</div>;
 
   return (
     <div className="bg-[#F8FAFC] min-h-screen font-sans antialiased pb-20">

@@ -6,7 +6,7 @@ A job-board web app that connects **job seekers** and **companies**. Job seekers
 
 | | |
 |---|---|
-| **Live demo** | [ADD VERCEL LINK] |
+| **Live demo** | [ADD VERCEL LINK] – click **Try the demo**, no sign-up needed |
 | **Backend (.NET API)** | [ADD BACKEND REPO LINK] – built by [TEAMMATE NAME] |
 | **My role** | Frontend: UI, routing, auth flow, API integration, state management |
 
@@ -32,6 +32,7 @@ A job-board web app that connects **job seekers** and **companies**. Job seekers
 - Protected routes with loading skeletons
 - One shared Axios client (`src/Api/apiClient.js`) for every request
 - Toast notifications (small dependency-free helper) instead of `alert()`
+- **Demo mode**: a client-side mock API (custom Axios adapter + seeded data) so the whole app can be explored instantly, even when the backend is offline
 
 ## Tech stack
 
@@ -63,6 +64,14 @@ npm run build      # production build in /build
 - **Proxies `/api/*` to the backend**, so the browser only ever talks to the frontend's own domain (no CORS configuration needed on the server).
 - **Falls back to `index.html`** for every other path, so deep links like `/home` or `/job/12` work on refresh.
 
+## Demo mode
+
+The **Try the demo** button (landing and login pages) signs you in as a sample user, with no sign-up and no e-mail verification. A custom Axios adapter (`src/demo/demoAdapter.js`) answers every API call from a seeded database kept in `localStorage`, using the same response shapes as the real API. Everything works: browsing and searching jobs, applying, withdrawing, editing the profile and skills, the AI roadmap dashboard, and managing a company with its jobs and applicants. Changes persist across page reloads until you click **Exit demo** or log out.
+
+- A banner is shown on every page while demo mode is active, and all names and e-mails are fictional.
+- The adapter is lazy-loaded, so normal users never download it.
+- To use the real backend, sign up or log in normally.
+
 ## Project structure
 
 ```
@@ -70,16 +79,10 @@ src/
 ├── Api/          # Axios client + one service file per backend resource
 ├── components/   # Navbar, sidebars, job card, skeletons, toaster, route guard…
 ├── context/      # Auth (verification flow), User (session) and Job (list + saved jobs) contexts
+├── demo/         # Demo mode: seed data, mock Axios adapter, enter/exit helpers
 ├── pages/        # One file per screen / route
 └── utils/        # session helper and toast helper
 ```
-
-## Demo accounts
-
-| Role | Email | Password |
-|---|---|---|
-| Job seeker | [ADD] | [ADD] |
-| Company | [ADD] | [ADD] |
 
 ## Known limitations
 

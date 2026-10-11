@@ -1,3 +1,4 @@
+import { enterDemo } from '../demo/demoMode';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../Api/authService';
@@ -166,6 +167,17 @@ export default function LoginPage() {
         <p className="text-center mt-4 text-gray-500">
             Don't have an account? <Link to="/signup" className="text-blue-800 font-extrabold hover:underline">Sign Up</Link>
           </p>
+
+          <div className="mt-6 border-t border-gray-100 pt-5 text-center">
+            <p className="text-sm text-gray-500 mb-3">Just looking around? No sign-up needed.</p>
+            <button
+              type="button"
+              onClick={enterDemo}
+              className="w-full rounded-2xl border border-blue-800 py-3 font-bold text-blue-800 transition-all hover:bg-blue-50"
+            >
+              Explore the demo
+            </button>
+          </div>
         </div> {/* نهاية قسم الفورم */}
       </motion.div> {/* هاد هو التاغ اللي كان ناقص وبسببه طلع الخطأ */}
     </div>
